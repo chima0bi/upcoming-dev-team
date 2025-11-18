@@ -1,0 +1,116 @@
+.top-navbar {
+  background-color: chocolate;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 3px;
+  z-index: 1000;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+}
+
+.logo {
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.top-navbar ul {
+  display: flex;
+  /* gap: 25px; */
+  justify-content: space-between;
+  list-style: none;
+}
+
+.top-navbar ul li {
+  padding-right: 25px;
+}
+
+.top-navbar ul li a {
+  text-decoration: none;
+  color: black;
+  /* font-weight: bold; */
+}
+
+.hamburger-icon {
+  /* display: flex; */
+  flex-direction: column;
+  display: none;
+}
+
+.hamburger-icon span {
+  background-color: white;
+  height: 6px;
+  width: 28px;
+  margin: 2px;
+}
+
+@media (max-width: 618px) {
+  .hamburger-icon {
+    display: flex;
+  }
+
+  .top-navbar ul {
+    display: none;
+  }
+
+  .top-navbar ul.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: chocolate; /* whole panel purple */
+    z-index: 1000;
+    height: 100vh; /* full viewport height */
+    width: 50%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .top-navbar ul.open li {
+    flex: 1; /* each item takes equal height */
+    display: flex; /* center text inside */
+    align-items: center;
+    justify-content: center;
+    /* width: 100%; */
+    /* margin: 0; */
+    /* background-color: transparent;   optional, since ul is purple */
+  }
+
+  .top-navbar ul.open li a {
+    padding: 0; /* remove big padding */
+    text-decoration: none;
+    color: white;
+  }
+
+  .top-navbar ul.open li:hover {
+    background: linear-gradient(135deg, rgb(195, 116, 60), rgb(60, 27, 4));
+  }
+  .top-navbar ul.open li:hover a {
+    color: black;
+  }
+  .top-navbar div.swords {
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease-in-out;
+  }
+
+  .top-navbar div.swords span {
+    background-color: black;
+    height: 6px;
+    width: 35px;
+    margin: 2px;
+  }
+  .top-navbar div.swords span:nth-child(1) {
+    transform: rotate(45deg) translateY(7px);
+  }
+  .top-navbar div.swords span:nth-child(2) {
+    display: none;
+  }
+  .top-navbar div.swords span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-7px);
+  }
+}
